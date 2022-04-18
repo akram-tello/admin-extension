@@ -1,15 +1,22 @@
 {
-  "name": "Hello Admin Extension",
+  "short_name": "admin area",
+  "name": "Admin Extension & PWA",
   "description": "Base Level Extension",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
   "version": "1.0",
   "manifest_version": 2,
   "browser_action": {
     "default_popup": "index.html",
     "default_title": "Open the popup"
   },
-  "icons": {
-    "16": "logo192.png",
-    "48": "logo192.png",
-    "128": "logo192.png"
-  }
+  "icons": [
+    {
+        "src": "/logo512.png",
+        "type": "image/png",
+        "sizes": "1024x1024"
+    }
+]
 }
