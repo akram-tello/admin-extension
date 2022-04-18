@@ -28,17 +28,15 @@ self.addEventListener('fetch', (event) => {
 
 // Activate the SW
 self.addEventListener('activate', (event) => {
-    const cacheWhitelist = [];
-    cacheWhitelist.push(CACHE_NAME);
+    const cacheWhitelist = [CACHE_NAME];
 
     event.waitUntil(
         caches.keys().then((cacheNames) => Promise.all(
             cacheNames.map((cacheName) => {
-                if(!cacheWhitelist.includes(cacheName)) {
+                if (cacheWhitelist.indexOf(cacheName) === -1) {
                     return caches.delete(cacheName);
                 }
             })
         ))
-            
     )
-});
+}); 
